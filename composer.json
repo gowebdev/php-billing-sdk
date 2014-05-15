@@ -1,0 +1,13 @@
+{
+    "name": "goweb/php-billing-sdk",
+    "require": {
+        "sokil/php-restful-sdk": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MD",
+            "email": "mayhem@ukr.net"
+        }
+    ]
+}
