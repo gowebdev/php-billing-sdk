@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0d14713b653fabb85b250cb78d9089fc",
+    "hash": "aee9baf3d7ec123d072692ef1ae38822",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -99,19 +99,24 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/a78d6504ff5d4367497785ab2ade91db3a9fbe11",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11",
                 "shasum": ""
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Psr\\Log\\": ""
@@ -133,7 +138,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2014-01-18 15:33:09"
         },
         {
             "name": "sokil/php-restful-sdk",
@@ -141,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sokil/php-restful-sdk.git",
-                "reference": "9890faae5391b6a3aeac3200578933b5454b81ea"
+                "reference": "dc0bc94f50a729b589b826c51aca911d942ee624"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sokil/php-restful-sdk/zipball/9890faae5391b6a3aeac3200578933b5454b81ea",
-                "reference": "9890faae5391b6a3aeac3200578933b5454b81ea",
+                "url": "https://api.github.com/repos/sokil/php-restful-sdk/zipball/dc0bc94f50a729b589b826c51aca911d942ee624",
+                "reference": "dc0bc94f50a729b589b826c51aca911d942ee624",
                 "shasum": ""
             },
             "require": {
@@ -170,28 +175,31 @@
                 }
             ],
             "description": "Framework to build RESTful client",
-            "time": "2014-05-15 13:37:49"
+            "time": "2014-05-15 21:01:03"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.4",
+            "version": "dev-master",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "e539602e5455aa086c0e81e604745af7789e4d8a"
+                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e539602e5455aa086c0e81e604745af7789e4d8a",
-                "reference": "e539602e5455aa086c0e81e604745af7789e4d8a",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
+                "reference": "cb62ec8dd05893fc8e4f0e6e21e326e1fc731fe8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/dependency-injection": "~2.0"
+                "psr/log": "~1.0",
+                "symfony/config": "~2.0",
+                "symfony/dependency-injection": "~2.0",
+                "symfony/stopwatch": "~2.2"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -200,7 +208,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -226,7 +234,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-04-16 10:34:31"
+            "time": "2014-04-29 10:13:57"
         }
     ],
     "packages-dev": [
@@ -235,7 +243,7 @@
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "sokil/php-restful-sdk": 20
     },

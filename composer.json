@@ -1,8 +1,15 @@
 {
     "name": "goweb/php-billing-sdk",
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/gowebdev/php-api.git"
+        }
+    ],
     "require": {
-        "sokil/php-restful-sdk": "dev-master"
+        "sokil/php-restful-sdk": "dev-master",
+        "goweb/php-api": "dev-master"
     },
     "license": "MIT",
     "authors": [
