@@ -2,7 +2,7 @@
     "name": "goweb/php-billing-sdk",
     "minimum-stability": "dev",
     "require": {
-        "sokil/php-restful-sdk": "0.*"
+        "sokil/php-restful-sdk": "dev-master"
     },
     "license": "MIT",
     "authors": [
