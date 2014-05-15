@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "sokil/php-restful-sdk": "dev-master",
-        "goweb/php-api": "dev-master"
+        "sokil/php-restful-sdk": "0.*",
+        "goweb/php-api": "0.*"
     },
     "license": "MIT",
     "authors": [
