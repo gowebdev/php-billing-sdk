@@ -21,4 +21,31 @@ class Billing extends \Sokil\Rest\Factory
         $this->_appKey = $appKey;
         return $this;
     }
+    
+    /**
+     * 
+     * @return \GoWeb\Billing\Request\CreateClientBaseService
+     */
+    public function createClientBaseService()
+    {
+        return $this->createRequest('CreateClientBaseService');
+    }
+    
+    /**
+     * 
+     * @return \GoWeb\Billing\Request\UpdateClientBaseService
+     */
+    public function updateClientBaseService()
+    {
+        return $this->createRequest('CreateClientBaseService');
+    }
+    
+    /**
+     * 
+     * @return \GoWeb\Billing\Request\DeleteClientBaseService
+     */
+    public function deleteClientBaseService()
+    {
+        return $this->createRequest('DeleteClientBaseService');
+    }
 }
