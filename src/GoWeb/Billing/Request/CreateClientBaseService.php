@@ -1,6 +1,6 @@
 <?php
 
-namespace GoWeb;
+namespace GoWeb\Billing\Request;
 
 class CreateClientBaseService extends \Sokil\Rest\Request
 {
@@ -8,21 +8,42 @@ class CreateClientBaseService extends \Sokil\Rest\Request
     
     protected $_url = '/api/clientBaseService';
     
+    /**
+     *
+     * @var \GoWeb\Api\Model\Client\ClientBaseService
+     */
+    private $_service;
+    
+    public function init()
+    {
+        $this->_service = new \GoWeb\Api\Model\Client\ClientBaseService;
+        
+        $this->onBeforeSend(function() {
+            $this->setQueryParams($this->_service->toArray());
+        });
+    }
+    
+    public function setFromServiceObject(\GoWeb\Api\Model\Client\ClientBaseService $service)
+    {
+        $this->_service = $service;
+        return $this;
+    }
+    
     public function setClientId($clientId)
     {
-        $this->setQueryParam('client_id', $clientId);
+        $this->_service->setClientId($clientId);
         return $this;
     }
     
     public function setServiceId($serviceId)
     {
-        $this->setQueryParam('service_id', $serviceId);
+        $this->_service->setBaseServiceId($serviceId);
         return $this;
     }
     
     public function setCustomName($customName)
     {
-        $this->setQueryParam('custom_name', $customName);
+        $this->_service->setCustomName($customName);
         return $this;
     }
 }

@@ -8,27 +8,48 @@ class CreateClientBaseService extends \Sokil\Rest\Request
     
     protected $_url = '/api/clientBaseService';
     
+    /**
+     *
+     * @var \GoWeb\Api\Model\Client\ClientBaseService
+     */
+    private $_service;
+    
+    public function init()
+    {
+        $this->_service = new \GoWeb\Api\Model\Client\ClientBaseService;
+        
+        $this->onBeforeSend(function() {
+            $this->setQueryParams($this->_service->toArray());
+        });
+    }
+    
+    public function setFromServiceObject(\GoWeb\Api\Model\Client\ClientBaseService $service)
+    {
+        $this->_service = $service;
+        return $this;
+    }
+    
     public function setId($id)
     {
-        $this->setQueryParam('id', $id);
+        $this->_service->setId($id);
         return $this;
     }
     
     public function setServiceId($serviceId)
     {
-        $this->setQueryParam('service_id', $serviceId);
+        $this->_service->setBaseServiceId($serviceId);
         return $this;
     }
     
     public function setCustomName($customName)
     {
-        $this->setQueryParam('custom_name', $customName);
+        $this->_service->setCustomName($customName);
         return $this;
     }
     
     public function setStatus($status)
     {
-        $this->setQueryParam('status', $status);
+        $this->_service->setStatus($status);
         return $this;
     }
 }
