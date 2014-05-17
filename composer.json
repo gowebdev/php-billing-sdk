@@ -1,5 +1,6 @@
 {
     "name": "goweb/php-billing-sdk",
+    "description": "Billing SDK",
     "minimum-stability": "dev",
     "repositories": [
         {
