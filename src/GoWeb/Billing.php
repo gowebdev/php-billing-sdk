@@ -2,7 +2,7 @@
 
 namespace GoWeb;
 
-class Billing extends \Sokil\Rest\Factory
+class Billing extends \Sokil\Rest\Client\Factory
 {
     protected $_requestClassNamespace = '\GoWeb\Billing\Request';
     
@@ -28,7 +28,7 @@ class Billing extends \Sokil\Rest\Factory
      */
     public function createClientBaseService()
     {
-        return $this->createRequest('CreateClientBaseService');
+        return $this->createSignedRequest('CreateClientBaseService');
     }
     
     /**
@@ -37,7 +37,7 @@ class Billing extends \Sokil\Rest\Factory
      */
     public function updateClientBaseService()
     {
-        return $this->createRequest('CreateClientBaseService');
+        return $this->createSignedRequest('CreateClientBaseService');
     }
     
     /**
@@ -46,6 +46,6 @@ class Billing extends \Sokil\Rest\Factory
      */
     public function deleteClientBaseService()
     {
-        return $this->createRequest('DeleteClientBaseService');
+        return $this->createSignedRequest('DeleteClientBaseService');
     }
 }

@@ -3,15 +3,15 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0ade41f2ad0d018fb40ab72b8ff1847b",
+    "hash": "de99eae3feb8f76ee6fb78cee1bf30fc",
     "packages": [
         {
             "name": "goweb/php-api",
-            "version": "0.2",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gowebdev/php-api.git",
-                "reference": "55856fb561989e26d4ce8c83c8a389ee9ac7d648"
+                "reference": "ee56da5ad374d79657442d24c1b70e86b415d665"
             },
             "type": "library",
             "autoload": {
@@ -29,7 +29,7 @@
                 }
             ],
             "description": "PHP lib for communication between different services",
-            "time": "2014-05-16 10:45:43"
+            "time": "2014-05-17 23:02:21"
         },
         {
             "name": "guzzle/guzzle",
@@ -168,20 +168,20 @@
         },
         {
             "name": "sokil/php-guzzlecomponents",
-            "version": "0.1",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sokil/php-guzzlecomponents.git",
-                "reference": "3f361a82732857295b1ee0339e51038353664fbe"
+                "reference": "8362ecb42d11a36fad8397179a20446677fde739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sokil/php-guzzlecomponents/zipball/3f361a82732857295b1ee0339e51038353664fbe",
-                "reference": "3f361a82732857295b1ee0339e51038353664fbe",
+                "url": "https://api.github.com/repos/sokil/php-guzzlecomponents/zipball/8362ecb42d11a36fad8397179a20446677fde739",
+                "reference": "8362ecb42d11a36fad8397179a20446677fde739",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": "v3.9.1"
+                "guzzle/guzzle": "3.*"
             },
             "type": "library",
             "autoload": {
@@ -195,25 +195,25 @@
             ],
             "authors": [
                 {
-                    "name": "sokil",
+                    "name": "Dmytro Sokil",
                     "email": "dmytro.sokil@gmail.com"
                 }
             ],
             "description": "Extensions for PHP Guzzle lib",
-            "time": "2014-05-15 21:39:26"
+            "time": "2014-05-17 22:50:15"
         },
         {
-            "name": "sokil/php-restful-sdk",
-            "version": "0.5",
+            "name": "sokil/php-rest-client",
+            "version": "0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sokil/php-restful-sdk.git",
-                "reference": "fcad4f65b8f25d8535e8e7d8ca968e68265992c4"
+                "url": "https://github.com/sokil/php-rest-client.git",
+                "reference": "6e83cd6f1b48bc777dbd07878419037d7c0fd9dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sokil/php-restful-sdk/zipball/fcad4f65b8f25d8535e8e7d8ca968e68265992c4",
-                "reference": "fcad4f65b8f25d8535e8e7d8ca968e68265992c4",
+                "url": "https://api.github.com/repos/sokil/php-rest-client/zipball/6e83cd6f1b48bc777dbd07878419037d7c0fd9dd",
+                "reference": "6e83cd6f1b48bc777dbd07878419037d7c0fd9dd",
                 "shasum": ""
             },
             "require": {
@@ -238,7 +238,7 @@
                 }
             ],
             "description": "Framework to build RESTful client",
-            "time": "2014-05-16 12:37:24"
+            "time": "2014-05-17 23:12:19"
         },
         {
             "name": "symfony/event-dispatcher",

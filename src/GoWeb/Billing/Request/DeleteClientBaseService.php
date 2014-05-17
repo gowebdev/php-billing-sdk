@@ -2,7 +2,7 @@
 
 namespace GoWeb;
 
-class DeleteClientBaseService extends \Sokil\Rest\Request
+class DeleteClientBaseService extends \Sokil\Rest\Client\Request
 {
     protected $_action = self::ACTION_DELETE;
     
