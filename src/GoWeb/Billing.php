@@ -6,19 +6,10 @@ class Billing extends \Sokil\Rest\Client\Factory
 {
     protected $_requestClassNamespace = '\GoWeb\Billing\Request';
     
-    private $_appId;
-    
-    private $_appKey;
-    
     public function setAppId($appId)
     {
-        $this->_appId = $appId;
-        return $this;
-    }
-    
-    public function setAppKey($appKey)
-    {
-        $this->_appKey = $appKey;
+        $this->addSignAdditionalParam('app_id', $appId);
+        
         return $this;
     }
     
