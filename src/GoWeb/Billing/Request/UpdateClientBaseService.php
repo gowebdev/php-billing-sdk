@@ -1,6 +1,6 @@
 <?php
 
-namespace GoWeb;
+namespace GoWeb\Billing\Request;
 
 class UpdateClientBaseService extends \Sokil\Rest\Client\Request
 {
