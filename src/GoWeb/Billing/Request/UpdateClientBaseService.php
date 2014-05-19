@@ -2,7 +2,7 @@
 
 namespace GoWeb;
 
-class CreateClientBaseService extends \Sokil\Rest\Client\Request
+class UpdateClientBaseService extends \Sokil\Rest\Client\Request
 {
     protected $_action = self::ACTION_UPDATE;
     
