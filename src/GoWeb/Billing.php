@@ -28,7 +28,7 @@ class Billing extends \Sokil\Rest\Client\Factory
      */
     public function updateClientBaseService()
     {
-        return $this->createSignedRequest('CreateClientBaseService');
+        return $this->createSignedRequest('UpdateClientBaseService');
     }
     
     /**
