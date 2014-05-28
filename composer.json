@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "sokil/php-rest-client": "0.*",
+        "sokil/php-rest": "0.*",
         "goweb/php-api": "0.*"
     },
     "license": "MIT",
