@@ -42,7 +42,7 @@ class Billing extends \Sokil\Rest\Client\Factory
     
     /**
      * 
-     * @return \GoWeb\Billing\Request\CreateClientBaseService
+     * @return \GoWeb\Billing\Request\CreateClientAdditionalService
      */
     public function createClientAdditionalService()
     {
@@ -51,7 +51,7 @@ class Billing extends \Sokil\Rest\Client\Factory
     
     /**
      * 
-     * @return \GoWeb\Billing\Request\DeleteClientBaseService
+     * @return \GoWeb\Billing\Request\DeleteClientAdditionalService
      */
     public function deleteClientAdditionalService()
     {
