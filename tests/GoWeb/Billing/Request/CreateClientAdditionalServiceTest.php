@@ -2,7 +2,7 @@
 
 namespace GoWeb\Billing\Request;
 
-class CreateClientBaseServiceTest extends \PHPUnit_Framework_TestCase
+class CreateClientAdditionalServiceTest extends \PHPUnit_Framework_TestCase
 {    
     protected $_factory;
     
@@ -13,34 +13,29 @@ class CreateClientBaseServiceTest extends \PHPUnit_Framework_TestCase
     
     public function testSend()
     {
-        $request = $this->_factory->createClientBaseService();
+        $request = $this->_factory->createClientAdditionalService();
         $request->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
             new \Guzzle\Http\Message\Response(200, [
                 'Content-Type' => 'application/json',
             ], json_encode([
                 "error" => 0,
                 "service" => [
-                    "id" => 45570,
-                    "service_id" => 222,
-                    "name" => "Домашний",
-                    "custom_name" => "333",
-                    "cost" => 0.033,
-                    "total_cost" => 0.033,
-                    "status" => "ACTIVE",
-                    "catchup" => 1,
-                    "ad" => 0
+                    "id" => 45584,
+                    "service_id" => 31,
+                    "name" => "dsfgdsfgdsfg",
+                    "cost" => 0
                 ]
             ]))
         )));
         
         $response = $request
             ->setClientId(111)
-            ->setServiceId(222)
-            ->setCustomName('333')
+            ->setServiceId(31)
+            ->setClientBaseServiceId(127654)
             ->send();
         
         $this->assertNotEmpty($response->get('service'));
         
-        $this->assertEquals(45570, $response->get('service.id'));
+        $this->assertEquals(45584, $response->get('service.id'));
     }
 }

@@ -39,4 +39,22 @@ class Billing extends \Sokil\Rest\Client\Factory
     {
         return $this->createSignedRequest('DeleteClientBaseService');
     }
+    
+    /**
+     * 
+     * @return \GoWeb\Billing\Request\CreateClientBaseService
+     */
+    public function createClientAdditionalService()
+    {
+        return $this->createSignedRequest('CreateClientAdditionalService');
+    }
+    
+    /**
+     * 
+     * @return \GoWeb\Billing\Request\DeleteClientBaseService
+     */
+    public function deleteClientAdditionalService()
+    {
+        return $this->createSignedRequest('DeleteClientAdditionalService');
+    }
 }
