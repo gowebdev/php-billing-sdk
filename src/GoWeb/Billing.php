@@ -99,6 +99,16 @@ class Billing extends \Sokil\Rest\Client\Factory
             ->getStructure();
     }
     
+    public function updateUser($identity, array $data)
+    {
+        return $this
+            ->createSignedRequest('UpdateUser')
+            ->setIdentity($identity)
+            ->setQueryParams($data)
+            ->send()
+            ->getStructure();
+    }
+    
     /**
      * 
      * @return \GoWeb\Billing\Request\CreateClientBaseService
