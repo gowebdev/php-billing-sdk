@@ -15,6 +15,34 @@ class Billing extends \Sokil\Rest\Client\Factory
     
     /**
      * 
+     * @return \GoWeb\Billing\Request\Register
+     */
+    public function register(array $data = null)
+    {
+        $request = $this->createSignedRequest('Register');
+        if($data) {
+            $data = array_insersect_key($data, array_flip(array(
+                'email',
+                'password',
+                'last_name',
+                'first_name',
+                'gender', 
+                'birth_day',
+                'birth_month',
+                'birth_year',
+                'service'
+            )));
+            
+            if($data) {
+                $request->setQueryParams($data);
+            }
+        }
+        
+        return $request;
+    }
+    
+    /**
+     * 
      * @return \GoWeb\Billing\Request\CreateClientBaseService
      */
     public function createClientBaseService()
