@@ -11,6 +11,21 @@ class UpdateUserTest extends \PHPUnit_Framework_TestCase
         $this->_factory = new \GoWeb\Billing('http =>//my/');
     }
     
+    public function testThroughHelper()
+    {
+        $this->_factory->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
+            new \Guzzle\Http\Message\Response(200, [
+                'Content-Type' => 'application/json',
+            ], json_encode([
+                "error" => 0,
+            ]))
+        )));
+        
+        $client = $this->_factory->updateUser(42, array('last_name' => 'Marfa'));
+        
+        $this->assertEquals(0, $client->get('error'));
+    }
+    
     public function testSend()
     {
         $this->_factory->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
