@@ -21,7 +21,14 @@ class UpdateUserTest extends \PHPUnit_Framework_TestCase
             ]))
         )));
         
-        $client = $this->_factory->updateUser('identity@server.com', array('last_name' => 'Marfa'));
+        $request = $this->_factory
+            ->createSignedRequest('UpdateUser')
+            ->setId(42)
+            ->addQueryParams(array('last_name' => 'Marfa'));
+        
+        $this->assertEquals('my/api/user?last_name=Marfa&identity=42', $request->getUrl());
+        
+        $client = $request->send()->getStructure();
         
         $this->assertEquals(0, $client->get('error'));
     }

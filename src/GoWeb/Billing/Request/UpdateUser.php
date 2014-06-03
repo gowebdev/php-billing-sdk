@@ -13,9 +13,9 @@ class UpdateUser extends \Sokil\Rest\Client\Request
      * @param int|string $identity identity of user
      * @return \GoWeb\Billing\Request\UpdateUser
      */
-    public function setIdentity($identity)
+    public function setId($id)
     {
-        $this->setQueryParam('identity', $identity);
+        $this->setQueryParam('identity', $id);
         return $this;
     }
     
