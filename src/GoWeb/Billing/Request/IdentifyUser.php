@@ -28,14 +28,6 @@ class IdentifyUser extends \Sokil\Rest\Client\Request
     {
         try {
             $client = parent::send();
-            if($client->get('error')) {
-                throw new \Exception($client->get('errorMessage'));
-            }
-
-            if($this->_clientBaseService) {
-                $client->setActiveClientBaseServiceId($this->_clientBaseService);
-            }
-            
         } catch (\Guzzle\Http\Exception\ClientErrorResponseException $e) {
             switch($e->getResponse()->getStatusCode()) {
                 case 401: // Unauthorised
@@ -47,6 +39,19 @@ class IdentifyUser extends \Sokil\Rest\Client\Request
                 default: // Other code
                     throw new \GoWeb\Billing\Request\AuthentifyUser\Exception\Generic('Remote server error with code ' . $response->getStatusCode());
             }  
+        }
+        
+        if($client->get('error')) {
+            throw new \Exception($client->get('errorMessage'));
+        }
+        
+        // define client's base service
+        try {
+            if($this->_clientBaseService) {
+                $client->setActiveClientBaseServiceId($this->_clientBaseService);
+            }
+        } catch (\Exception $e) {
+            throw new \GoWeb\Billing\Request\AuthentifyUser\Exception\UnknownService('Unknown service specified');
         }
         
         return $client;
