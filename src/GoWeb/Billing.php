@@ -43,6 +43,64 @@ class Billing extends \Sokil\Rest\Client\Factory
     
     /**
      * 
+     * @param string $identity
+     * @param int|null $clientBaseServiceId
+     * @return \GoWeb\Api\Model\Client
+     */
+    public function identifyUser($identity, $clientBaseServiceId = null)
+    {
+        $request = $this
+            ->createSignedRequest('IdentifyUser')
+            ->setIdentity($identity);
+        
+        if($clientBaseServiceId) {
+            $request->setClientBaseService($clientBaseServiceId);
+        }
+        
+        return $request->send()->getStructure();
+    }
+    
+    /**
+     * 
+     * @param type $identity
+     * @param type $password
+     * @param type $clientBaseServiceId
+     * @param type $session
+     * @return \GoWeb\Api\Model\Client
+     */
+    public function authentifyUser($identity, $password, $clientBaseServiceId = null, $session = false)
+    {
+        // this request send password, so request signing not required
+        $request = $this
+            ->createRequest('AuthentifyUser')
+            ->setIdentity($identity)
+            ->setPassword($password);
+        
+        if($clientBaseServiceId) {
+            $request->setClientBaseService($clientBaseServiceId);
+        }
+        
+        if($session) {
+            $request->startSession();
+        }
+        
+        return $request->send()->getStructure();
+    }
+    
+    /**
+     * 
+     * @return \GoWeb\Api\Model\Client
+     */
+    public function getDemoUser()
+    {
+        return $this
+            ->createSignedRequest('AuthentifyUser')
+            ->send()
+            ->getStructure();
+    }
+    
+    /**
+     * 
      * @return \GoWeb\Billing\Request\CreateClientBaseService
      */
     public function createClientBaseService()
