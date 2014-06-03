@@ -19,17 +19,6 @@ class UpdateUser extends \Sokil\Rest\Client\Request
         return $this;
     }
     
-    public function setQueryParams(array $params)
-    {
-        return parent::setQueryParams(array_intersect_key($params, array_flip(array(
-            'email',
-            'password',
-            'last_name','first_name',
-            'gender',
-            'birthday'
-        ))));
-    }
-    
     public function send()
     {
         try {

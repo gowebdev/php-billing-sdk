@@ -104,7 +104,7 @@ class Billing extends \Sokil\Rest\Client\Factory
         return $this
             ->createSignedRequest('UpdateUser')
             ->setId($identity)
-            ->setQueryParams($data)
+            ->addQueryParams($data)
             ->send()
             ->getStructure();
     }
