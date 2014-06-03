@@ -13,7 +13,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     
     public function testSend()
     {
-        $request = $this->_factory->register();
+        $request = $this->_factory->register(array(
+            'email'     => 'user@server.com',
+            'password'  => '==password==',
+        ));
+        
         $request->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
             new \Guzzle\Http\Message\Response(200, [
                 'Content-Type' => 'application/json',

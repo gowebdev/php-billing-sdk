@@ -21,7 +21,7 @@ class Billing extends \Sokil\Rest\Client\Factory
     {
         $request = $this->createSignedRequest('Register');
         if($data) {
-            $data = array_insersect_key($data, array_flip(array(
+            $data = array_intersect_key($data, array_flip(array(
                 'email',
                 'password',
                 'last_name',
