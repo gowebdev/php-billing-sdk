@@ -111,6 +111,15 @@ class Billing extends \Sokil\Rest\Client\Factory
     
     /**
      * 
+     * @return \GoWeb\Billing\Request\RemindUserPassword
+     */
+    public function remindUserPassword()
+    {
+        return $this->createSignedRequest('RemindUserPassword');
+    }
+    
+    /**
+     * 
      * @return \GoWeb\Billing\Request\CreateClientBaseService
      */
     public function createClientBaseService()

@@ -11,7 +11,7 @@ class UpdateUserTest extends \PHPUnit_Framework_TestCase
         $this->_factory = new \GoWeb\Billing('http =>//my/');
     }
     
-    public function testThroughHelper()
+    public function testHelper()
     {
         $this->_factory->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
             new \Guzzle\Http\Message\Response(200, [
