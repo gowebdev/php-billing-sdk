@@ -118,8 +118,9 @@ class Billing extends \Sokil\Rest\Client\Factory
         try {
             return 0 === $this
                 ->createSignedRequest('RemindUserPassword')
-                ->send()
                 ->setEmail($email)
+                ->send()
+                ->getStructure()
                 ->get('error');
             
         } catch (\Exception $e) {
