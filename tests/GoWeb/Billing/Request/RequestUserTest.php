@@ -20,11 +20,7 @@ class RemindUserPasswordTest extends \PHPUnit_Framework_TestCase
                 "error" => 0,
             ]))
         )));
-        
-        $response = $this->_factory->remindUserPassword()
-            ->setEmail('user@server.com')
-            ->send();
-        
-        $this->assertEquals(0, $response->get('error'));
+
+        $this->assertEquals(true, $this->_factory->remindUserPassword('user@server.com'));
     }
 }
