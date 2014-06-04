@@ -128,6 +128,20 @@ class Billing extends \Sokil\Rest\Client\Factory
         }
     }
     
+    public function getServices($serviceId = null) {
+        $request = $this->createSignedRequest('GetServices');
+        
+        if($serviceId) {
+            if(is_array($serviceId)) {
+                $request->setServiceIdList($serviceId);
+            } else {
+                $request->setServiceId($serviceId);
+            }
+        }
+        
+        return $request->send();
+    }
+    
     /**
      * 
      * @return \GoWeb\Billing\Request\CreateClientBaseService
