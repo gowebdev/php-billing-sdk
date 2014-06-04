@@ -23,4 +23,18 @@ class RemindUserPasswordTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(true, $this->_factory->remindUserPassword('user@server.com'));
     }
+    
+    public function testSendWrongUser()
+    {
+        $this->_factory->addSubscriber(new \Guzzle\Plugin\Mock\MockPlugin(array(
+            new \Guzzle\Http\Message\Response(200, [
+                'Content-Type' => 'application/json',
+            ], json_encode([
+                "error" => 1,
+                "errorMessage" => "User not found"
+            ]))
+        )));
+
+        $this->assertEquals(false, $this->_factory->remindUserPassword('user@server.com'));
+    }
 }
