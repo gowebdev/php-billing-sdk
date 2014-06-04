@@ -15,7 +15,7 @@ class Services extends \Sokil\Rest\Transport\Structure
         }
     }
     
-    public function getServices()
+    public function getList()
     {
         return $this->getObjectList('services', function($data) {
             switch($data['type']) {
@@ -27,7 +27,7 @@ class Services extends \Sokil\Rest\Transport\Structure
         });
     }
     
-    public function getServicesArray()
+    public function getArrayList()
     {
         return $this->get('services');
     }
