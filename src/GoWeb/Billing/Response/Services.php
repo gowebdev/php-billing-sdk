@@ -26,4 +26,9 @@ class Services extends \Sokil\Rest\Transport\Structure
             }
         });
     }
+    
+    public function getServicesArray()
+    {
+        return $this->get('services');
+    }
 }
