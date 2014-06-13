@@ -48,12 +48,12 @@ class GetServicesTest extends \PHPUnit_Framework_TestCase
         )));
         
         $response = $this->_factory->getServices();
+
+        $this->assertInstanceOf('\Sokil\Rest\Transport\StructureList', $response->getList());
         
-        $this->assertInstanceOf('\Sokil\Rest\Transport\StructureList', $response->getServices());
+        $this->assertInstanceOf('\GoWeb\Api\Model\Client\ClientBaseService', $response->getList()->current());
         
-        $this->assertInstanceOf('\GoWeb\Api\Model\Client\ClientBaseService', $response->getServices()->current());
-        
-        $this->assertEquals('Рекламний', $response->getServices()->current()->getName());
+        $this->assertEquals('Рекламний', $response->getList()->current()->getName());
     }
     
     public function testGetService()
