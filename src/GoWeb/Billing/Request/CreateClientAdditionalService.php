@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class CreateClientAdditionalService extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_CREATE;
-    
+class CreateClientAdditionalService extends \Sokil\Rest\Client\Request\CreateRequest
+{    
     protected $_url = '/api/clientAdditionalService';
     
     /**

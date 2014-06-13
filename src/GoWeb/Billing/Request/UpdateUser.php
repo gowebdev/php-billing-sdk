@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class UpdateUser extends \Sokil\Rest\Client\Request
+class UpdateUser extends \Sokil\Rest\Client\Request\UpdateRequest
 {
-    protected $_action = self::ACTION_UPDATE;
-    
     protected $_url = '/api/user';
     
     /**

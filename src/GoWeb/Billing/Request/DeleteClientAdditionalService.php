@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class DeleteClientAdditionalService extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_DELETE;
-    
+class DeleteClientAdditionalService extends \Sokil\Rest\Client\Request\DeleteRequest
+{    
     protected $_url = '/api/clientAdditionalService';
     
     /**

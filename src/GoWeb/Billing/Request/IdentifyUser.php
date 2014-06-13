@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class IdentifyUser extends \Sokil\Rest\Client\Request
+class IdentifyUser extends \Sokil\Rest\Client\Request\ReadRequest
 {
-    protected $_action = self::ACTION_READ;
-    
     protected $_url = '/api/user';
     
     protected $_structureClassName = '\GoWeb\Api\Model\Client';

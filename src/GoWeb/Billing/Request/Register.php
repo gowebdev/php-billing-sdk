@@ -2,9 +2,7 @@
 
 namespace GoWeb\Billing\Request;
 
-class Register extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_CREATE;
-    
+class Register extends \Sokil\Rest\Client\Request\CreateRequest
+{    
     protected $_url = '/api/user';
 }

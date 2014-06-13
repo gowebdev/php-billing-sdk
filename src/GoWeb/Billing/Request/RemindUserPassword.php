@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class RemindUserPassword extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_READ;
-    
+class RemindUserPassword extends \Sokil\Rest\Client\Request\ReadRequest
+{    
     protected $_url = '/api/reminduserpass';
     
     public function setEmail($email)

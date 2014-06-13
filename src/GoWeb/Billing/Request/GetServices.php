@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class GetServices extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_READ;
-    
+class GetServices extends \Sokil\Rest\Client\Request\ReadRequest
+{    
     protected $_url = '/api/service';
     
     protected $_structureClassName = 'GoWeb\Billing\Response\Services';

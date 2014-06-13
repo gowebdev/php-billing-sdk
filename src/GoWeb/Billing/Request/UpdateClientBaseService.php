@@ -2,9 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class UpdateClientBaseService extends \Sokil\Rest\Client\Request
+class UpdateClientBaseService extends \Sokil\Rest\Client\Request\UpdateRequest
 {
-    protected $_action = self::ACTION_UPDATE;
     
     protected $_url = '/api/clientBaseService';
     

@@ -2,10 +2,8 @@
 
 namespace GoWeb\Billing\Request;
 
-class CreateClientBaseService extends \Sokil\Rest\Client\Request
-{
-    protected $_action = self::ACTION_CREATE;
-    
+class CreateClientBaseService extends \Sokil\Rest\Client\Request\CreateRequest
+{    
     protected $_url = '/api/clientBaseService';
     
     /**
