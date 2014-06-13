@@ -6,10 +6,10 @@ class GetServices extends \Sokil\Rest\Client\Request\ReadRequest
 {    
     protected $_url = '/api/service';
     
-    protected $_structureClassName = 'GoWeb\Billing\Response\Services';
+    protected $_structureClassName = '\GoWeb\Billing\Response\Services';
     
     public function setServiceId($id)
-    {
+    {        
         $id = (int) $id;
         if(!$id) {
             throw new \Exception('Wrong service specified');
